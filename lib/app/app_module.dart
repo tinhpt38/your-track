@@ -1,4 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:your_track/app/your_track/presenter/pages/guild/onboarding.dart';
 import 'package:your_track/app/your_track/presenter/pages/home.dart';
 
 class AppModule extends Module {
@@ -7,6 +8,6 @@ class AppModule extends Module {
 
   @override
   void routes(r) {
-    r.child('/', child: (context) => const HomePage());
+    r.child('/', child: (context) => const OnboardingPage());
   }
 }

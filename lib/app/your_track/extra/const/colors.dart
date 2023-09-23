@@ -75,6 +75,8 @@ class ExtraColors {
   //g6
   static const Color _mauve = Color(0xffDBB0FD);
   static const Color _darkMauve = Color(0xffE2BDFF);
+  static get violet => _mauve;
+  static get darkViolet => _darkMauve;
   static get graidentViolet => const LinearGradient(
       begin: Alignment.bottomLeft,
       end: Alignment.topRight,
