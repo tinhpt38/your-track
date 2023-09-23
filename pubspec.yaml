@@ -17,6 +17,7 @@ dependencies:
   firebase_messaging: ^14.6.8
   firebase_storage: ^11.2.7
   firebase_remote_config: ^4.2.6
+  google_fonts: ^6.1.0
 
 dev_dependencies:
   flutter_test:
