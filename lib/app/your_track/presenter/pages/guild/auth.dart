@@ -27,6 +27,12 @@ class _AuthPageState extends State<AuthPage> {
   }
 
   @override
+  void dispose() {
+    _store.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return ScopedBuilder<AuthStore, AuthState>(
@@ -34,11 +40,50 @@ class _AuthPageState extends State<AuthPage> {
       onState: (context, state) {
         return Scaffold(
             body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Expanded(
-              child: Container(
-                
+              child: PageView(
+                controller: _store.controller,
+                onPageChanged: _store.pageChange,
+                children: [slideView(0), slideView(1), slideView(2)],
               ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width * 1 / 5,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [0, 1, 2, 3].asMap().entries.map((entry) {
+                    return Container(
+                      width: 8,
+                      height: 8,
+                      decoration: BoxDecoration(
+                          color: ExtraColors.primary,
+                          borderRadius: BorderRadius.circular(90)),
+                    );
+                  }).toList(),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+              child: Text(
+                  [
+                    AppLocalizations.of(context)?.benefits1 ?? "",
+                    AppLocalizations.of(context)?.benefits2 ?? "",
+                    AppLocalizations.of(context)?.benefits3 ?? ""
+                  ][state.currentSide],
+                  style: ExtraFonts.titleBold30
+                      .copyWith(color: ExtraColors.neutralGreen)),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+              child: Text(
+                  AppLocalizations.of(context)?.benefisDescription ?? "",
+                  style: ExtraFonts.bodyMedium14
+                      .copyWith(color: ExtraColors.neutralSliver)),
             ),
             TextIconButton(
                 width: size.width * 0.8,
@@ -80,12 +125,28 @@ class _AuthPageState extends State<AuthPage> {
                 ),
               ),
             ),
-            Spacer()
           ],
         ));
       },
       onError: (context, error) => Center(child: Text(error.toString())),
       onLoading: (context) => const Center(child: CircularProgressIndicator()),
+    );
+  }
+
+  Widget slideView(int currentSide) {
+    return Container(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Image.asset(
+            [
+              "assets/images/2.png",
+              "assets/images/3.png",
+              "assets/images/4.png"
+            ][currentSide],
+          )
+        ],
+      ),
     );
   }
 }
