@@ -4,6 +4,7 @@ import 'package:your_track/app/your_track/extra/const/fonts.dart';
 
 import '../../extra/const/icons.dart';
 import '../widgets/navigation/default.dart';
+import '../widgets/navigation/habit.dart';
 import '../widgets/users/avatar.dart';
 
 class HomePage extends StatelessWidget {
@@ -12,9 +13,13 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: NavigationDefault(
-        onClickFilter: () {
+      appBar: NavigationHabit(
+        title: 'Habit',
+        onFilterClick: () {
           print('on click filter');
+        },
+        onDeleteClick: () {
+          print('on click delete');
         },
       ),
       body: const Center(
