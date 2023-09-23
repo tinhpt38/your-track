@@ -40,18 +40,26 @@ class OnboardingPage extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      // Padding(
+                      //   padding: const EdgeInsets.symmetric(vertical: 12),
+                      //   child: Text(AppLocalizations.of(context)?.appName ?? "",
+                      //       style: ExtraFonts.headingBold16.copyWith(
+                      //           foreground: Paint()
+                      //             ..shader = LinearGradient(
+                      //               colors: <Color>[
+                      //                 ExtraColors.violet,
+                      //                 ExtraColors.darkViolet,
+                      //               ],
+                      //             ).createShader(const Rect.fromLTWH(
+                      //                 0.0, 0.0, 200.0, 70.0)))),
+                      // ),
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 12),
-                        child: Text(AppLocalizations.of(context)?.appName ?? "",
-                            style: ExtraFonts.headingBold16.copyWith(
-                                foreground: Paint()
-                                  ..shader = LinearGradient(
-                                    colors: <Color>[
-                                      ExtraColors.violet,
-                                      ExtraColors.darkViolet,
-                                    ],
-                                  ).createShader(const Rect.fromLTWH(
-                                      0.0, 0.0, 200.0, 70.0)))),
+                        child: Text(
+                          AppLocalizations.of(context)?.appName ?? "",
+                          style: ExtraFonts.titleBold30
+                              .copyWith(color: ExtraColors.semainticRed),
+                        ),
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 12),
