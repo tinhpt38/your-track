@@ -2,25 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ExtraFonts {
-  final TextStyle lagerTitle =
+  static final TextStyle lagerTitleSemiBold64 =
       GoogleFonts.inter(fontWeight: FontWeight.w600, fontSize: 64);
 
-  final TextStyle title1 =
+  static final TextStyle titleBold30 =
       GoogleFonts.inter(fontWeight: FontWeight.bold, fontSize: 30);
-  final TextStyle title2 =
+  static final TextStyle titleBold24 =
       GoogleFonts.inter(fontWeight: FontWeight.bold, fontSize: 24);
-  final TextStyle title3 =
+  static final TextStyle titleBold20 =
       GoogleFonts.inter(fontWeight: FontWeight.bold, fontSize: 20);
-  final TextStyle heading1 =
+  static final TextStyle headingBold16 =
       GoogleFonts.inter(fontWeight: FontWeight.bold, fontSize: 16);
-  final TextStyle heading2 =
+  static final TextStyle headingSemiBold16 =
       GoogleFonts.inter(fontWeight: FontWeight.w600, fontSize: 16);
-  final TextStyle body4 =
+  static final TextStyle bodySemiBold14 =
       GoogleFonts.inter(fontWeight: FontWeight.w600, fontSize: 14);
-  final TextStyle body5 =
+  static final TextStyle bodyMedium14 =
       GoogleFonts.inter(fontWeight: FontWeight.w500, fontSize: 14);
-  final TextStyle caption =
+  static final TextStyle captionBold12 =
       GoogleFonts.inter(fontWeight: FontWeight.bold, fontSize: 12);
-  final TextStyle cation2 =
+  static final TextStyle cationMedium12 =
       GoogleFonts.inter(fontWeight: FontWeight.w500, fontSize: 12);
 }

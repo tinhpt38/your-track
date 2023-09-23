@@ -1,0 +1,31 @@
+class ExtraIcons {
+  static const String filePath = "assets/icons/";
+  static const String arrowDownCircle = "${filePath}ArrowDownCircle.svg";
+  static const String arrowLeftSquare = "${filePath}ArrowLeftSquare.svg";
+  static const String arrowRightSquare = "${filePath}ArrowRightSquare.svg";
+  static const String arrowUpCircle = "${filePath}ArrowUpCircle";
+  static const String bookmark = "${filePath}Bookmark.svg";
+  static const String calendar = "${filePath}Calendar.svg";
+  static const String category = "${filePath}Category.svg";
+  static const String chat = "${filePath}Chat.svg";
+  static const String closeSquare = "${filePath}CloseSquare.svg";
+  static const String danger = "${filePath}Danger.svg";
+  static const String delete = "${filePath}Delete.svg";
+  static const String document = "${filePath}Document.svg";
+  static const String edit = "${filePath}Edit.svg";
+  static const String filter = "${filePath}Filter.svg";
+  static const String filter2 = "${filePath}Filter2.svg";
+  static const String graph = "${filePath}Graph.svg";
+  static const String lougout = "${filePath}Logout.svg";
+  static const String message = "${filePath}Message.svg";
+  static const String moreSquare = "${filePath}MoreSquare.svg";
+  static const String music = "${filePath}Music.svg";
+  static const String notification = "${filePath}Notification.svg";
+  static const String pause = "${filePath}Pause.svg";
+  static const String play = "${filePath}Play.svg";
+  static const String plus = "${filePath}Plus.svg";
+  static const String setting = "${filePath}Setting.svg";
+  static const String star = "${filePath}Star.svg";
+  static const String tickSquare = "${filePath}TickSquare.svg";
+  static const String timeCircle = "${filePath}TimeCircle.svg";
+}
