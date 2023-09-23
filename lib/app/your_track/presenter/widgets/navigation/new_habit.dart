@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../../extra/const/colors.dart';
 import '../../../extra/const/fonts.dart';
 import '../../../extra/const/icons.dart';
-import '../users/avatar.dart';
 
-class NavigationDefault extends StatelessWidget implements PreferredSizeWidget {
-  const NavigationDefault(
+class NavigationNewHabit extends StatelessWidget
+    implements PreferredSizeWidget {
+  const NavigationNewHabit(
       {super.key,
       this.height = 64,
       required this.backgroundColor,
-      required this.onFilterClick,
-      required this.title});
+      required this.onExitClick,
+      required this.title,
+      required this.onSaveClick});
   final double height;
-  final Function onFilterClick;
+  final Function onExitClick;
+  final Function onSaveClick;
   final String title;
   final Color backgroundColor;
   @override
@@ -26,12 +29,22 @@ class NavigationDefault extends StatelessWidget implements PreferredSizeWidget {
         style: ExtraFonts.titleBold20,
       ),
       leading: IconButton(
-        icon: SvgPicture.asset(ExtraIcons.filter),
+        icon: SvgPicture.asset(ExtraIcons.closeSquare),
         onPressed: () {
-          onFilterClick();
+          onExitClick();
         },
       ),
-      actions: const [Avatar()],
+      actions: [
+        TextButton(
+            onPressed: () {
+              onSaveClick();
+            },
+            child: Text(
+              "Save",
+              style:
+                  ExtraFonts.headingBold16.copyWith(color: ExtraColors.primary),
+            ))
+      ],
     );
   }
 
