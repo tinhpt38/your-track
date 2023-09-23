@@ -9,6 +9,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_modular: ^6.3.2
+  http: ^1.1.0
+  flutter_triple: ^3.0.0
+  firebase_core: ^2.16.0
+  firebase_auth: ^4.10.0
+  firebase_messaging: ^14.6.8
+  firebase_storage: ^11.2.7
+  firebase_remote_config: ^4.2.6
 
 dev_dependencies:
   flutter_test:
