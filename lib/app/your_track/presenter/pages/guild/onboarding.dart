@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:your_track/app/your_track/extra/const/fonts.dart';
 import 'package:your_track/app/your_track/presenter/widgets/buttons/primary.dart';
@@ -81,7 +82,10 @@ class OnboardingPage extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 12),
                         child: PrimaryButton(
-                          onPress: () {},
+                          onPress: () {
+                            // Modular.to.pushNamed("/auth");
+                            Modular.to.navigate("/auth");
+                          },
                           label:
                               AppLocalizations.of(context)?.onBoadingAction ??
                                   "",

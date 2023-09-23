@@ -21,6 +21,6 @@ class ExtraFonts {
       GoogleFonts.inter(fontWeight: FontWeight.w500, fontSize: 14);
   static final TextStyle captionBold12 =
       GoogleFonts.inter(fontWeight: FontWeight.bold, fontSize: 12);
-  static final TextStyle cationMedium12 =
+  static final TextStyle captionMedium12 =
       GoogleFonts.inter(fontWeight: FontWeight.w500, fontSize: 12);
 }

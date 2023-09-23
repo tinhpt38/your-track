@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:your_track/app/your_track/extra/const/fonts.dart';
 import 'package:your_track/app/your_track/presenter/widgets/buttons/primary.dart';
-import 'package:your_track/app/your_track/presenter/widgets/buttons/texticon.dart';
+import 'package:your_track/app/your_track/presenter/widgets/buttons/only_icon.dart';
 import 'package:your_track/app/your_track/presenter/widgets/navigation/back.dart';
 import 'package:your_track/app/your_track/presenter/widgets/navigation/edit.dart';
 import 'package:your_track/app/your_track/presenter/widgets/navigation/new_habit.dart';
 
 import '../../extra/const/colors.dart';
 import '../../extra/const/icons.dart';
-import '../widgets/buttons/icon.dart';
+import '../widgets/buttons/circle_icon.dart';
 import '../widgets/buttons/seconday.dart';
+import '../widgets/buttons/texticon.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

@@ -2,5 +2,8 @@
   "appName": "Your track. 🙌",
   "onBoarding": "The best time to `\nstart is now!",
   "onBoardingDescription": "You''re taking the first step in changing your life.`\nLet us guide you through it.",
-  "onBoadingAction": "Let`s do it"
+  "onBoadingAction": "Let`s do it",
+  "authAction": "Continue with Email",
+  "termOfSerivce": "Term of Services & Privacy Policy",
+  "agreeWith":"By continuing you argree Your Tracking "
 }
