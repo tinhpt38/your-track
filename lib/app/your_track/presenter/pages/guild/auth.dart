@@ -44,7 +44,7 @@ class _AuthPageState extends State<AuthPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: size.height * 1 / 2,
+              height: size.height * 0.5,
               child: PageView(
                 controller: _store.controller,
                 onPageChanged: _store.pageChange,
@@ -130,7 +130,7 @@ class _AuthPageState extends State<AuthPage> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 64, vertical: 8),
+              padding: const EdgeInsets.symmetric(horizontal: 64, vertical: 16),
               child: RichText(
                 textAlign: TextAlign.center,
                 text: TextSpan(
