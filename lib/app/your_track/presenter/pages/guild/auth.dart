@@ -41,12 +41,19 @@ class _AuthPageState extends State<AuthPage> {
         return Scaffold(
             body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Expanded(
+            SizedBox(
+              height: size.height * 1 / 2,
               child: PageView(
                 controller: _store.controller,
                 onPageChanged: _store.pageChange,
-                children: [slideView(0), slideView(1), slideView(2)],
+                children: [
+                  slideView(0),
+                  slideView(1),
+                  slideView(2),
+                  slideView(3)
+                ],
               ),
             ),
             Padding(
@@ -60,7 +67,10 @@ class _AuthPageState extends State<AuthPage> {
                       width: 8,
                       height: 8,
                       decoration: BoxDecoration(
-                          color: ExtraColors.primary,
+                          // ignore: unrelated_type_equality_checks
+                          color: state.currentSide == entry.value
+                              ? ExtraColors.primary
+                              : ExtraColors.secondary,
                           borderRadius: BorderRadius.circular(90)),
                     );
                   }).toList(),
@@ -73,7 +83,8 @@ class _AuthPageState extends State<AuthPage> {
                   [
                     AppLocalizations.of(context)?.benefits1 ?? "",
                     AppLocalizations.of(context)?.benefits2 ?? "",
-                    AppLocalizations.of(context)?.benefits3 ?? ""
+                    AppLocalizations.of(context)?.benefits3 ?? "",
+                    AppLocalizations.of(context)?.benefits4 ?? ""
                   ][state.currentSide],
                   style: ExtraFonts.titleBold30
                       .copyWith(color: ExtraColors.neutralGreen)),
@@ -85,23 +96,35 @@ class _AuthPageState extends State<AuthPage> {
                   style: ExtraFonts.bodyMedium14
                       .copyWith(color: ExtraColors.neutralSliver)),
             ),
-            TextIconButton(
-                width: size.width * 0.8,
-                iconPath: ExtraIcons.message,
-                onPress: () {},
-                label: AppLocalizations.of(context)?.authAction ?? ""),
+            Container(
+              alignment: Alignment.center,
+              child: TextIconButton(
+                  width: size.width * 0.9,
+                  iconPath: ExtraIcons.message,
+                  onPress: () {
+                    // ignore: avoid_print
+                    print("Countinu with Email");
+                  },
+                  label: AppLocalizations.of(context)?.authAction ?? ""),
+            ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(4.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   OnlyIconButton(
                     iconPath: ExtraIcons.message,
-                    onPress: () {},
+                    onPress: () {
+                      // ignore: avoid_print
+                      print("Continue with Google");
+                    },
                   ),
                   OnlyIconButton(
                     iconPath: ExtraIcons.message,
-                    onPress: () {},
+                    onPress: () {
+                      // ignore: avoid_print
+                      print("Continue with Facebook");
+                    },
                   )
                 ],
               ),
@@ -134,19 +157,13 @@ class _AuthPageState extends State<AuthPage> {
   }
 
   Widget slideView(int currentSide) {
-    return Container(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Image.asset(
-            [
-              "assets/images/2.png",
-              "assets/images/3.png",
-              "assets/images/4.png"
-            ][currentSide],
-          )
-        ],
-      ),
+    return Image.asset(
+      [
+        "assets/images/2.png",
+        "assets/images/3.png",
+        "assets/images/6.png",
+        "assets/images/4.png"
+      ][currentSide],
     );
   }
 }
