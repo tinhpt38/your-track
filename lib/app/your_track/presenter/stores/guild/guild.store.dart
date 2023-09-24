@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_triple/flutter_triple.dart';
-import 'package:your_track/app/your_track/presenter/stores/guild/auth.state.dart';
+import 'package:your_track/app/your_track/presenter/stores/guild/guild.state.dart';
 
-class AuthStore extends Store<AuthState> {
-  AuthStore() : super(AuthInitState(0));
+class GuildStore extends Store<GuildState> {
+  GuildStore() : super(GuildInitState(0));
 
   final _controller = PageController(
     initialPage: 0,
@@ -16,6 +16,6 @@ class AuthStore extends Store<AuthState> {
   }
 
   void pageChange(int index) {
-    update(AuthDataState(index));
+    update(GuildDataState(index));
   }
 }

@@ -83,8 +83,7 @@ class OnboardingPage extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(vertical: 12),
                         child: PrimaryButton(
                           onPress: () {
-                            // Modular.to.pushNamed("/auth");
-                            Modular.to.navigate("/auth");
+                            Modular.to.navigate("/guild");
                           },
                           label:
                               AppLocalizations.of(context)?.onBoadingAction ??

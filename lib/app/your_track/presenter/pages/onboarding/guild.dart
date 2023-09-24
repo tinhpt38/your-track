@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_triple/flutter_triple.dart';
 import 'package:your_track/app/your_track/extra/const/icons.dart';
-import 'package:your_track/app/your_track/presenter/stores/guild/auth.state.dart';
-import 'package:your_track/app/your_track/presenter/stores/guild/auth.store.dart';
+import 'package:your_track/app/your_track/presenter/stores/guild/guild.state.dart';
+import 'package:your_track/app/your_track/presenter/stores/guild/guild.store.dart';
 import 'package:your_track/app/your_track/presenter/widgets/buttons/only_icon.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -10,15 +10,15 @@ import '../../../extra/const/colors.dart';
 import '../../../extra/const/fonts.dart';
 import '../../widgets/buttons/texticon.dart';
 
-class AuthPage extends StatefulWidget {
-  const AuthPage({super.key});
+class GuildPage extends StatefulWidget {
+  const GuildPage({super.key});
 
   @override
-  State<AuthPage> createState() => _AuthPageState();
+  State<GuildPage> createState() => _GuildPageState();
 }
 
-class _AuthPageState extends State<AuthPage> {
-  final AuthStore _store = AuthStore();
+class _GuildPageState extends State<GuildPage> {
+  final GuildStore _store = GuildStore();
 
   @override
   void initState() {
@@ -35,7 +35,7 @@ class _AuthPageState extends State<AuthPage> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return ScopedBuilder<AuthStore, AuthState>(
+    return ScopedBuilder<GuildStore, GuildState>(
       store: _store,
       onState: (context, state) {
         return Scaffold(
