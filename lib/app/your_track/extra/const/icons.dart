@@ -1,5 +1,6 @@
 class ExtraIcons {
   static const String filePath = "assets/icons/";
+  static const String darkFilePath = "assets/icons/dark/";
   static const String arrowDownCircle = "${filePath}ArrowDownCircle.svg";
   static const String arrowLeftSquare = "${filePath}ArrowLeftSquare.svg";
   static const String arrowRightSquare = "${filePath}ArrowRightSquare.svg";
@@ -28,4 +29,37 @@ class ExtraIcons {
   static const String star = "${filePath}Star.svg";
   static const String tickSquare = "${filePath}TickSquare.svg";
   static const String timeCircle = "${filePath}TimeCircle.svg";
+
+  //dark
+  static const String arrowDownCircleDark =
+      "${darkFilePath}ArrowDownCircle.svg";
+  static const String arrowLeftSquareDark =
+      "${darkFilePath}ArrowLeftSquare.svg";
+  static const String arrowRightSquareDark =
+      "${darkFilePath}ArrowRightSquare.svg";
+  static const String arrowUpCircleDark = "${darkFilePath}ArrowUpCircle";
+  static const String bookmarkDark = "${darkFilePath}Bookmark.svg";
+  static const String calendarDark = "${darkFilePath}Calendar.svg";
+  static const String categoryDark = "${darkFilePath}Category.svg";
+  static const String chatDark = "${darkFilePath}Chat.svg";
+  static const String closeSquareDark = "${darkFilePath}CloseSquare.svg";
+  static const String dangerDark = "${darkFilePath}Danger.svg";
+  static const String deleteDark = "${darkFilePath}Delete.svg";
+  static const String documentDark = "${darkFilePath}Document.svg";
+  static const String editDark = "${darkFilePath}Edit.svg";
+  static const String filterDark = "${darkFilePath}Filter.svg";
+  static const String filter2Dark = "${darkFilePath}Filter2.svg";
+  static const String graphDark = "${darkFilePath}Graph.svg";
+  static const String lougoutDark = "${darkFilePath}Logout.svg";
+  static const String messageDark = "${darkFilePath}Message.svg";
+  static const String moreSquareDark = "${darkFilePath}MoreSquare.svg";
+  static const String musicDark = "${darkFilePath}Music.svg";
+  static const String notificationDark = "${darkFilePath}Notification.svg";
+  static const String pauseDark = "${darkFilePath}Pause.svg";
+  static const String playDark = "${darkFilePath}Play.svg";
+  static const String plusDark = "${darkFilePath}Plus.svg";
+  static const String settingDark = "${darkFilePath}Setting.svg";
+  static const String starDark = "${darkFilePath}Star.svg";
+  static const String tickSquareDark = "${darkFilePath}TickSquare.svg";
+  static const String timeCircleDark = "${darkFilePath}TimeCircle.svg";
 }
