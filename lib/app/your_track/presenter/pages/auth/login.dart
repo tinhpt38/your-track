@@ -6,7 +6,9 @@ import 'package:your_track/app/your_track/extra/const/colors.dart';
 import 'package:your_track/app/your_track/extra/const/fonts.dart';
 import 'package:your_track/app/your_track/presenter/stores/auth/auth.state.dart';
 import 'package:your_track/app/your_track/presenter/stores/auth/auth.store.dart';
+import 'package:your_track/app/your_track/presenter/widgets/buttons/primary.dart';
 import 'package:your_track/app/your_track/presenter/widgets/input/email.dart';
+import 'package:your_track/app/your_track/presenter/widgets/input/password.dart';
 import 'package:your_track/app/your_track/presenter/widgets/navigation/back.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -48,11 +50,26 @@ class _LoginPageState extends State<LoginPage> {
                       .copyWith(color: ExtraColors.neutralGreen),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 12.0),
+                  padding: const EdgeInsets.only(top: 24, bottom: 8),
                   child: EmailInput(
                     control: _store.emailController,
                   ),
-                )
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8),
+                  child: PasswordInput(
+                    control: _store.passwordController,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 12.0),
+                  child: PrimaryButton(
+                      width: size.width * 0.9,
+                      label: AppLocalizations.of(context)?.continueLabel ?? "",
+                      onPress: () {
+                        print("next step");
+                      }),
+                ),
               ],
             ),
           ),

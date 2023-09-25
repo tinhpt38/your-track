@@ -16,6 +16,7 @@ class ExtraIcons {
   static const String edit = "${filePath}Edit.svg";
   static const String filter = "${filePath}Filter.svg";
   static const String filter2 = "${filePath}Filter2.svg";
+  static const String hide = "${filePath}Hide.svg";
   static const String graph = "${filePath}Graph.svg";
   static const String lougout = "${filePath}Logout.svg";
   static const String message = "${filePath}Message.svg";
@@ -49,6 +50,7 @@ class ExtraIcons {
   static const String editDark = "${darkFilePath}Edit.svg";
   static const String filterDark = "${darkFilePath}Filter.svg";
   static const String filter2Dark = "${darkFilePath}Filter2.svg";
+  static const String hideDark = "${darkFilePath}Hide.svg";
   static const String graphDark = "${darkFilePath}Graph.svg";
   static const String lougoutDark = "${darkFilePath}Logout.svg";
   static const String messageDark = "${darkFilePath}Message.svg";

@@ -1,4 +1,6 @@
-abstract class AuthState {}
+abstract class AuthState {
+  
+}
 
 class AuthInitState extends AuthState {
   AuthInitState();
