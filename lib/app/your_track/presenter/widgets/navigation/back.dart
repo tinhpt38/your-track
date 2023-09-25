@@ -9,7 +9,7 @@ class NavigationBack extends StatelessWidget implements PreferredSizeWidget {
   const NavigationBack(
       {super.key,
       this.height = 64,
-      required this.backgroundColor,
+      this.backgroundColor = Colors.white,
       required this.onBackClick,
       required this.title});
   final double height;
@@ -19,6 +19,7 @@ class NavigationBack extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      elevation: 0,
       backgroundColor: backgroundColor,
       centerTitle: false,
       title: Text(

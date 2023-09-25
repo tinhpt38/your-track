@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_triple/flutter_triple.dart';
 import 'package:your_track/app/your_track/extra/const/icons.dart';
 import 'package:your_track/app/your_track/presenter/stores/guild/guild.state.dart';
@@ -102,8 +103,7 @@ class _GuildPageState extends State<GuildPage> {
                   width: size.width * 0.9,
                   iconPath: ExtraIcons.message,
                   onPress: () {
-                    // ignore: avoid_print
-                    print("Countinu with Email");
+                    Modular.to.pushNamed("/login");
                   },
                   label: AppLocalizations.of(context)?.authAction ?? ""),
             ),
