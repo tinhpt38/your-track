@@ -21,7 +21,9 @@ class _LoginPageState extends State<LoginPage> {
       store: _store,
       onError: (context, error) => Center(child: Text(error.toString())),
       onLoading: (context) => const Center(child: CircularProgressIndicator()),
-      onState: (context, state) {},
+      onState: (context, state) {
+        return Container();
+      },
     );
   }
 }
