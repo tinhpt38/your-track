@@ -38,7 +38,7 @@ class ExtraIcons {
       "${darkFilePath}ArrowLeftSquare.svg";
   static const String arrowRightSquareDark =
       "${darkFilePath}ArrowRightSquare.svg";
-  static const String arrowUpCircleDark = "${darkFilePath}ArrowUpCircle";
+  static const String arrowUpCircleDark = "${darkFilePath}ArrowUpCircle.svg";
   static const String bookmarkDark = "${darkFilePath}Bookmark.svg";
   static const String calendarDark = "${darkFilePath}Calendar.svg";
   static const String categoryDark = "${darkFilePath}Category.svg";

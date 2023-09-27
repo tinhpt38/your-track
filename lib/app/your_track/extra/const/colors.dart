@@ -104,7 +104,7 @@ class ExtraColors {
   static const Color semainticRed = Color(0xffe44f4f);
 
   //neutral
-  static const Color neutralGreen = Color(0xff262A34);
+  static const Color neutralGreen = Color(0xff1B202A);
   static const Color neutralBlack = Color(0xff5E6272);
   static const Color neutralSliver = Color(0xff808191);
   static const Color neutralWhite = Color(0xffffffff);
