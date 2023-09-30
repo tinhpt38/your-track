@@ -8,6 +8,8 @@ import 'package:your_track/app/your_track/presenter/widgets/navigation/back.dart
 import 'package:your_track/app/your_track/presenter/widgets/navigation/edit.dart';
 import 'package:your_track/app/your_track/presenter/widgets/navigation/new_habit.dart';
 import 'package:your_track/app/your_track/presenter/widgets/progress_bar/progress_bar.dart';
+import 'package:your_track/app/your_track/presenter/widgets/selection/check_box.dart';
+import 'package:your_track/app/your_track/presenter/widgets/selection/toggle.dart';
 import 'package:your_track/app/your_track/presenter/widgets/tab_view/tab_view.dart';
 
 import '../../extra/const/colors.dart';
@@ -15,6 +17,7 @@ import '../../extra/const/icons.dart';
 import '../widgets/buttons/circle_icon.dart';
 import '../widgets/buttons/seconday.dart';
 import '../widgets/buttons/texticon.dart';
+import '../widgets/selection/radio_button.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -47,7 +50,38 @@ class _HomePageState extends State<HomePage> {
       isOpen = value;
     });
   }
+
   ////////////////////////////////
+  ///
+  ///use for check box
+  bool isChecked = true;
+  void checkTap(bool value) {
+    setState(() {
+      isChecked = !value;
+    });
+  }
+  ////////////////////////////////
+  ///
+
+  ///use for toggle button
+  bool isOn = true;
+  void changeToggle(bool value) {
+    setState(() {
+      isOn = !value;
+    });
+  }
+  ////////////////////////////////
+
+  ///use for radio button
+  ///
+  ///
+  ///
+  bool isCheckRadio = false;
+  void changeRadio(bool value) {
+    setState(() {
+      isCheckRadio = !value;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -88,6 +122,21 @@ class _HomePageState extends State<HomePage> {
                 height: 10,
               ),
               const ProgressBar(percent: 0.9, type: 5),
+              const SizedBox(
+                height: 20,
+              ),
+              CheckBox(isChecked: isChecked, onChange: checkTap),
+              const SizedBox(
+                height: 20,
+              ),
+              Toggle(isOn: isOn, onChange: changeToggle),
+              const SizedBox(
+                height: 20,
+              ),
+              RadioButton(
+                isChecked: isCheckRadio,
+                onChange: changeRadio,
+              ),
               // SecondaryButton(
               //   label: "Let do it",
               //   onPress: () {},
