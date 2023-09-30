@@ -30,15 +30,11 @@ class DropDown extends StatelessWidget {
     }
 
     double widthScreen() {
-      return isLarge ? width : width * 0.42;
-    }
-
-    Color color() {
-      return isOpen ? ExtraColors.primary : ExtraColors.neutralGreen;
+      return isLarge ? width : width * 0.45;
     }
 
     Widget icon() {
-      return isOpen
+      return !isOpen
           ? SvgPicture.asset(
               ExtraIcons.arrowDownCircleDark,
             )
@@ -64,7 +60,7 @@ class DropDown extends StatelessWidget {
                       style: const TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                        color: ExtraColors.neutralSliver,
                       ),
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -74,11 +70,11 @@ class DropDown extends StatelessWidget {
           onChanged: onChange,
           buttonStyleData: ButtonStyleData(
             height: 55,
-            padding: const EdgeInsets.only(right: 14),
+            width: widthScreen(),
+            padding: const EdgeInsets.only(left: 14, right: 14),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),
-              border: Border.all(width: 1.5, color: color()),
-              color: ExtraColors.neutralGreen,
+              color: ExtraColors.secondary.withOpacity(0.4),
             ),
           ),
           iconStyleData: IconStyleData(
@@ -89,13 +85,11 @@ class DropDown extends StatelessWidget {
             maxHeight: 255,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(24),
-              color: ExtraColors.neutralGreen,
+              color: ExtraColors.neutralWhite,
             ),
             offset: const Offset(0, -5),
             scrollbarTheme: ScrollbarThemeData(
-              radius: const Radius.circular(40),
-              thickness: MaterialStateProperty.all<double>(6),
-              thumbVisibility: MaterialStateProperty.all<bool>(true),
+              thickness: MaterialStateProperty.all<double>(0),
             ),
           ),
         ),
