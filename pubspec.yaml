@@ -28,6 +28,7 @@ dependencies:
   intl_utils: ^2.8.4
   flutter_mobx: ^2.1.0
   dropdown_button2: ^2.3.9
+  percent_indicator: ^4.2.3
 
 
 dev_dependencies:

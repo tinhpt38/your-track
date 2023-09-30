@@ -7,6 +7,7 @@ import 'package:your_track/app/your_track/presenter/widgets/drop_down/drop_down.
 import 'package:your_track/app/your_track/presenter/widgets/navigation/back.dart';
 import 'package:your_track/app/your_track/presenter/widgets/navigation/edit.dart';
 import 'package:your_track/app/your_track/presenter/widgets/navigation/new_habit.dart';
+import 'package:your_track/app/your_track/presenter/widgets/progress_bar/progress_bar.dart';
 import 'package:your_track/app/your_track/presenter/widgets/tab_view/tab_view.dart';
 
 import '../../extra/const/colors.dart';
@@ -67,6 +68,26 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              const SizedBox(
+                height: 30,
+              ),
+              const ProgressBar(percent: 0.1, type: 1),
+              const SizedBox(
+                height: 10,
+              ),
+              const ProgressBar(percent: 0.3, type: 2),
+              const SizedBox(
+                height: 10,
+              ),
+              const ProgressBar(percent: 0.5, type: 3),
+              const SizedBox(
+                height: 10,
+              ),
+              const ProgressBar(percent: 0.7, type: 4),
+              const SizedBox(
+                height: 10,
+              ),
+              const ProgressBar(percent: 0.9, type: 5),
               // SecondaryButton(
               //   label: "Let do it",
               //   onPress: () {},
