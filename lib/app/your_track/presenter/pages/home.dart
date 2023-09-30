@@ -102,41 +102,41 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const SizedBox(
-                height: 30,
-              ),
-              const ProgressBar(percent: 0.1, type: 1),
-              const SizedBox(
-                height: 10,
-              ),
-              const ProgressBar(percent: 0.3, type: 2),
-              const SizedBox(
-                height: 10,
-              ),
-              const ProgressBar(percent: 0.5, type: 3),
-              const SizedBox(
-                height: 10,
-              ),
-              const ProgressBar(percent: 0.7, type: 4),
-              const SizedBox(
-                height: 10,
-              ),
-              const ProgressBar(percent: 0.9, type: 5),
-              const SizedBox(
-                height: 20,
-              ),
-              CheckBox(isChecked: isChecked, onChange: checkTap),
-              const SizedBox(
-                height: 20,
-              ),
-              Toggle(isOn: isOn, onChange: changeToggle),
-              const SizedBox(
-                height: 20,
-              ),
-              RadioButton(
-                isChecked: isCheckRadio,
-                onChange: changeRadio,
-              ),
+              // const SizedBox(
+              //   height: 30,
+              // ),
+              // const ProgressBar(percent: 0.1, type: 1),
+              // const SizedBox(
+              //   height: 10,
+              // ),
+              // const ProgressBar(percent: 0.3, type: 2),
+              // const SizedBox(
+              //   height: 10,
+              // ),
+              // const ProgressBar(percent: 0.5, type: 3),
+              // const SizedBox(
+              //   height: 10,
+              // ),
+              // const ProgressBar(percent: 0.7, type: 4),
+              // const SizedBox(
+              //   height: 10,
+              // ),
+              // const ProgressBar(percent: 0.9, type: 5),
+              // const SizedBox(
+              //   height: 20,
+              // ),
+              // CheckBox(isChecked: isChecked, onChange: checkTap),
+              // const SizedBox(
+              //   height: 20,
+              // ),
+              // Toggle(isOn: isOn, onChange: changeToggle),
+              // const SizedBox(
+              //   height: 20,
+              // ),
+              // RadioButton(
+              //   isChecked: isCheckRadio,
+              //   onChange: changeRadio,
+              // ),
               // SecondaryButton(
               //   label: "Let do it",
               //   onPress: () {},
@@ -156,13 +156,13 @@ class _HomePageState extends State<HomePage> {
               //   iconPath: ExtraIcons.message,
               //   onPress: () {},
               // ),
-              const SizedBox(
-                height: 40,
-              ),
-              CicleIconButton(
-                onPress: () {},
-                iconPath: ExtraIcons.plus,
-              ),
+              // const SizedBox(
+              //   height: 40,
+              // ),
+              // CicleIconButton(
+              //   onPress: () {},
+              //   iconPath: ExtraIcons.plus,
+              // ),
               const SizedBox(
                 height: 40,
               ),
