@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_triple/flutter_triple.dart';
@@ -67,7 +66,7 @@ class _LoginPageState extends State<LoginPage> {
                       width: size.width * 0.9,
                       label: AppLocalizations.of(context)?.continueLabel ?? "",
                       onPress: () {
-                        print("next step");
+                        Modular.to.pushNamed("/home");
                       }),
                 ),
               ],
