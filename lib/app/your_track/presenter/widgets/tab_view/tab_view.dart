@@ -34,6 +34,7 @@ class _TabViewState extends State<TabView> {
     if (widget.isTask) {
       return InkWell(
         splashColor: Colors.transparent,
+        highlightColor: Colors.transparent,
         onTap: () {
           setState(() {
             isCategory = !isCategory;
@@ -62,6 +63,7 @@ class _TabViewState extends State<TabView> {
               ...itemTab().entries.map(
                     (item) => InkWell(
                       splashColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
                       onTap: () {
                         setState(() {
                           index = item.key;

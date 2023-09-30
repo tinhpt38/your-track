@@ -30,6 +30,8 @@ class ExtraIcons {
   static const String star = "${filePath}Star.svg";
   static const String tickSquare = "${filePath}TickSquare.svg";
   static const String timeCircle = "${filePath}TimeCircle.svg";
+  static const String checked = "${filePath}Checked.svg";
+  static const String unCheck = "${filePath}Uncheck.svg";
 
   //dark
   static const String arrowDownCircleDark =
