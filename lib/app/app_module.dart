@@ -13,7 +13,8 @@ class AppModule extends Module {
     // r.child('/',
     //     child: (context) => const OnboardingPage(),
     //     children: [ChildRoute("/auth", child: (context) => const AuthPage())]);
-    r.child('/', child: (context) => const OnboardingPage());
+    r.child('/', child: (context) => const HomePage());
+    // r.child('/', child: (context) => const OnboardingPage());
     r.child('/guild', child: (context) => const GuildPage());
     r.child('/login', child: (context) => const LoginPage());
     r.child('/home', child: (context) => const HomePage());
