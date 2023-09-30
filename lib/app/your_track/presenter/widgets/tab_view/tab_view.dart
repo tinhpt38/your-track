@@ -23,7 +23,31 @@ class _TabViewState extends State<TabView> {
   Map<int, String> itemTimeList = {0: 'Daily', 1: 'Weekly', 2: 'Monthly'};
 
   Map<int, String> itemTab() {
-    return widget.isTask ? itemTaskList : itemTimeList;
+    if (widget.isTask) {
+      return itemTaskList;
+    } else {
+      return itemTimeList;
+    }
+  }
+
+  Widget _icon() {
+    if (widget.isTask) {
+      return InkWell(
+        splashColor: Colors.transparent,
+        onTap: () {
+          setState(() {
+            isCategory = !isCategory;
+          });
+        },
+        child: SvgPicture.asset(
+          width: 30,
+          height: 30,
+          isCategory ? ExtraIcons.category : ExtraIcons.document,
+        ),
+      );
+    } else {
+      return Container();
+    }
   }
 
   @override
@@ -50,21 +74,7 @@ class _TabViewState extends State<TabView> {
                       ),
                     ),
                   ),
-              widget.isTask
-                  ? InkWell(
-                      splashColor: Colors.transparent,
-                      onTap: () {
-                        setState(() {
-                          isCategory = !isCategory;
-                        });
-                      },
-                      child: SvgPicture.asset(
-                        width: 30,
-                        height: 30,
-                        isCategory ? ExtraIcons.category : ExtraIcons.document,
-                      ),
-                    )
-                  : Container()
+              _icon()
             ],
           ),
           const SizedBox(
