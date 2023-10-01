@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_triple/flutter_triple.dart';
+import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:your_track/app/your_track/extra/const/colors.dart';
 import 'package:your_track/app/your_track/extra/const/fonts.dart';
 import 'package:your_track/app/your_track/presenter/stores/auth/auth.state.dart';
@@ -8,6 +9,7 @@ import 'package:your_track/app/your_track/presenter/stores/auth/auth.store.dart'
 import 'package:your_track/app/your_track/presenter/widgets/buttons/primary.dart';
 import 'package:your_track/app/your_track/presenter/widgets/input/email.dart';
 import 'package:your_track/app/your_track/presenter/widgets/input/password.dart';
+import 'package:your_track/app/your_track/presenter/widgets/input/phone.dart';
 import 'package:your_track/app/your_track/presenter/widgets/navigation/back.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -50,16 +52,14 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 24, bottom: 8),
-                  child: EmailInput(
-                    control: _store.emailController,
+                  child: PhoneInput(
+                    label: AppLocalizations.of(context)?.yourPhone ?? "",
+                    onChange: (PhoneNumber val) {
+                      print(val);
+                    },
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8),
-                  child: PasswordInput(
-                    control: _store.passwordController,
-                  ),
-                ),
+                
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 12.0),
                   child: PrimaryButton(

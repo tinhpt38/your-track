@@ -9,6 +9,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../../extra/const/colors.dart';
 import '../../../extra/const/fonts.dart';
+import '../../widgets/buttons/primary.dart';
 import '../../widgets/buttons/texticon.dart';
 
 class GuildPage extends StatefulWidget {
@@ -99,13 +100,12 @@ class _GuildPageState extends State<GuildPage> {
             ),
             Container(
               alignment: Alignment.center,
-              child: TextIconButton(
+              child: PrimaryButton(
                   width: size.width * 0.9,
-                  iconPath: ExtraIcons.message,
+                  label: AppLocalizations.of(context)?.continueLabel ?? "",
                   onPress: () {
                     Modular.to.pushNamed("/login");
-                  },
-                  label: AppLocalizations.of(context)?.authAction ?? ""),
+                  }),
             ),
             Padding(
               padding: const EdgeInsets.all(4.0),
