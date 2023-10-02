@@ -1,13 +1,35 @@
-// class Result {
-//   final String image;
-//   final String name;
-//   final String nickname;
-//   final String url;
+import 'package:your_track/app/your_track/infra/models/base.dart';
 
-//   const Result({
-//     required this.image,
-//     required this.name,
-//     required this.nickname,
-//     required this.url,
+// class Result<T extends BaseModel> implements BaseModel {
+//   bool success;
+//   String? message;
+//   T? data;
+
+//   Result({
+//     required this.success,
+//     this.message,
+//     this.data,
 //   });
+
+//   @override
+//   Map<String, dynamic> toJson() {
+//     return {
+//       'success': success,
+//       'message': message,
+//       'data': data?.toJson(),
+//     };
+//   }
+
+//   @override
+//   factory Result.fromJson(Map<String, dynamic> map) {
+//     return Result<T>(
+//       success: map['success'] ?? false,
+//       message: map['message'] ?? '',
+//       // TODO: Allows calling T.fromMap method
+//       data: T.fromJson(map['data']),
+//     );
+//   }
+
+//   @override
+//   String collectionName() => data?.collectionName() ?? "";
 // }

@@ -1,12 +1,27 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:your_track/app/your_track/presenter/pages/auth/login.dart';
+import 'package:your_track/app/your_track/domain/repositories/auth.repositories.dart';
+import 'package:your_track/app/your_track/domain/usecasees/sign_in_uc.dart';
+import 'package:your_track/app/your_track/infra/datasources/local/auth_datasource.dart';
+import 'package:your_track/app/your_track/infra/datasources/remote/auth_datasource_fake.dart';
+import 'package:your_track/app/your_track/infra/datasources/remote/auth_remote_datasource.dart';
+import 'package:your_track/app/your_track/infra/repositories/auth_repository_impl.dart';
+import 'package:your_track/app/your_track/presenter/pages/signin/login.dart';
 import 'package:your_track/app/your_track/presenter/pages/onboarding/guild.dart';
 import 'package:your_track/app/your_track/presenter/pages/onboarding/onboarding.dart';
 import 'package:your_track/app/your_track/presenter/pages/home.dart';
 
 class AppModule extends Module {
   @override
-  void binds(i) {}
+  void binds(i) {
+    AuthLocalDataSource authLocalDataSource = AuthLocalDataSource();
+    AuthRemoteDataSource authRemoteDataSource = AuthRemoteDataSourceFirebase();
+
+    AuthRepository authRepository = AuthRepositoryImpl(
+      localDataSource: authLocalDataSource,
+      remoteDataSource: authRemoteDataSource,
+    );
+    i.addInstance(authRepository);
+  }
 
   @override
   void routes(r) {

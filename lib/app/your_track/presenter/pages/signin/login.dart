@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_triple/flutter_triple.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
+import 'package:your_track/app/your_track/domain/repositories/auth.repositories.dart';
+import 'package:your_track/app/your_track/domain/usecasees/sign_in_uc.dart';
 import 'package:your_track/app/your_track/extra/const/colors.dart';
 import 'package:your_track/app/your_track/extra/const/fonts.dart';
-import 'package:your_track/app/your_track/presenter/stores/auth/auth.state.dart';
-import 'package:your_track/app/your_track/presenter/stores/auth/auth.store.dart';
+import 'package:your_track/app/your_track/presenter/stores/sign_in/signin.state.dart';
+import 'package:your_track/app/your_track/presenter/stores/sign_in/signin.store.dart';
 import 'package:your_track/app/your_track/presenter/widgets/buttons/primary.dart';
 import 'package:your_track/app/your_track/presenter/widgets/input/email.dart';
 import 'package:your_track/app/your_track/presenter/widgets/input/password.dart';
@@ -21,12 +23,14 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final AuthStore _store = AuthStore();
+  final SignInStore _store =
+      SignInStore(SignInUseCase(authRepository: Modular.get<AuthRepository>()));
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return ScopedBuilder<AuthStore, AuthState>(
+
+    return ScopedBuilder<SignInStore, SignInState>(
       store: _store,
       onError: (context, error) => Center(child: Text(error.toString())),
       onLoading: (context) => const Center(child: CircularProgressIndicator()),
@@ -59,7 +63,6 @@ class _LoginPageState extends State<LoginPage> {
                     },
                   ),
                 ),
-                
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 12.0),
                   child: PrimaryButton(
