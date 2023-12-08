@@ -23,10 +23,11 @@ class NavigationNewHabit extends StatelessWidget
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: backgroundColor,
+      elevation: 0,
       centerTitle: false,
       title: Text(
         title,
-        style: ExtraFonts.titleBold20,
+        style: ExtraFonts.titleBold20.copyWith(color: ExtraColors.neutralBlack),
       ),
       leading: IconButton(
         icon: SvgPicture.asset(ExtraIcons.closeSquare),

@@ -22,12 +22,12 @@ class InProgress extends StatelessWidget {
       GridViewProgress(
         items: items,
       ),
-      SizedBox(
+      const SizedBox(
         width: double.infinity,
         child: Row(
           children: [
-            ListViewCategory(items: items, title: 'Morning'),
-            ListViewCategory(items: items, title: 'Afternoon'),
+            ListViewCategory(items: ["Do exxercise"], title: 'Morning'),
+            ListViewCategory(items: ["Mediation"], title: 'Afternoon'),
           ],
         ),
       )

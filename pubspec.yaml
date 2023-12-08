@@ -33,6 +33,7 @@ dependencies:
   intl_phone_number_input: ^0.7.3+1
   built_value: ^8.6.3
   pinput: ^3.0.1
+  calendar_timeline: ^1.1.2
 
 
 dev_dependencies:

@@ -5,6 +5,7 @@ import 'package:your_track/app/your_track/infra/datasources/local/auth_datasourc
 import 'package:your_track/app/your_track/infra/datasources/remote/auth_datasource_fake.dart';
 import 'package:your_track/app/your_track/infra/datasources/remote/auth_remote_datasource.dart';
 import 'package:your_track/app/your_track/infra/repositories/auth_repository_impl.dart';
+import 'package:your_track/app/your_track/presenter/pages/main/create.new.habit.dart';
 import 'package:your_track/app/your_track/presenter/pages/main/main.dart';
 import 'package:your_track/app/your_track/presenter/pages/signin/login.dart';
 import 'package:your_track/app/your_track/presenter/pages/onboarding/guild.dart';
@@ -38,5 +39,6 @@ class AppModule extends Module {
     r.child('/home', child: (context) => const HomePage());
     //In Main App
     r.child('/main', child: (context) => const MainPage());
+    r.child('/createHabit', child: (context) => const CreateNewHabit());
   }
 }

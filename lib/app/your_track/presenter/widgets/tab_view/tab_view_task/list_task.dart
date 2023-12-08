@@ -19,7 +19,7 @@ class _ListTaskState extends State<ListTask> {
     if (widget.index == 0) {
       return InProgress(
         isCategory: widget.isCategory,
-        items: ['1', '2'],
+        items: ['Drink water', 'Read Book'],
       );
     } else if (widget.index == 1) {
       return NotProgress(isCategory: widget.isCategory, items: ['1', '2']);
