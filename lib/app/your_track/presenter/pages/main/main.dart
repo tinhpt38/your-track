@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:calendar_timeline/calendar_timeline.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -79,38 +81,41 @@ class _MainPageState extends State<MainPage> {
       "Help"
     ];
     return Drawer(
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(
-              height: 72,
-            ),
-            const Avatar(),
-            Text("Thao Lee", style: ExtraFonts.headingSemiBold16),
-            const SizedBox(
-              height: 54,
-            ),
-            ...links.map((link) => Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 4),
-                  child: TextIconButton(
-                    iconPath: ExtraIcons.lougout,
-                    label: link,
-                    onPress: () {},
-                    bgColor: Colors.transparent,
-                    textcolor: ExtraColors.primary,
-                    iconColor: ExtraColors.primary,
-                  ),
-                )),
-            const Spacer(),
-            TextIconButton(
-              iconPath: ExtraIcons.lougout,
-              label: 'Log out',
-              onPress: () {},
-              bgColor: ExtraColors.semainticRed,
-            )
-          ],
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(
+                height: 72,
+              ),
+              const Avatar(),
+              Text("Thao Lee", style: ExtraFonts.headingSemiBold16),
+              const SizedBox(
+                height: 54,
+              ),
+              ...links.map((link) => Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 4),
+                    child: TextIconButton(
+                      iconPath: ExtraIcons.lougout,
+                      label: link,
+                      onPress: () {},
+                      bgColor: Colors.transparent,
+                      textcolor: ExtraColors.primary,
+                      iconColor: ExtraColors.primary,
+                    ),
+                  )),
+              const Spacer(),
+              TextIconButton(
+                iconPath: ExtraIcons.lougout,
+                label: 'Log out',
+                onPress: () {},
+                bgColor: ExtraColors.semainticRed,
+              )
+            ],
+          ),
         ),
       ),
     );
