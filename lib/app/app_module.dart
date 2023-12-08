@@ -5,11 +5,12 @@ import 'package:your_track/app/your_track/infra/datasources/local/auth_datasourc
 import 'package:your_track/app/your_track/infra/datasources/remote/auth_datasource_fake.dart';
 import 'package:your_track/app/your_track/infra/datasources/remote/auth_remote_datasource.dart';
 import 'package:your_track/app/your_track/infra/repositories/auth_repository_impl.dart';
+import 'package:your_track/app/your_track/presenter/pages/main/main.dart';
 import 'package:your_track/app/your_track/presenter/pages/signin/login.dart';
 import 'package:your_track/app/your_track/presenter/pages/onboarding/guild.dart';
 import 'package:your_track/app/your_track/presenter/pages/onboarding/onboarding.dart';
 import 'package:your_track/app/your_track/presenter/pages/home.dart';
-import 'package:your_track/app/your_track/presenter/pages/signin/opt.dart';
+import 'package:your_track/app/your_track/presenter/pages/signin/otp.dart';
 
 class AppModule extends Module {
   @override
@@ -33,7 +34,9 @@ class AppModule extends Module {
     r.child('/', child: (context) => const OnboardingPage());
     r.child('/guild', child: (context) => const GuildPage());
     r.child('/login', child: (context) => const LoginPage());
-    r.child('/opt', child: (context) => const OPTPage());
+    r.child('/opt', child: (context) => const OTPPage());
     r.child('/home', child: (context) => const HomePage());
+    //In Main App
+    r.child('/main', child: (context) => const MainPage());
   }
 }

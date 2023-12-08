@@ -9,14 +9,14 @@ import '../../widgets/navigation/back.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class OPTPage extends StatefulWidget {
-  const OPTPage({super.key});
+class OTPPage extends StatefulWidget {
+  const OTPPage({super.key});
 
   @override
-  State<OPTPage> createState() => _OPTPageState();
+  State<OTPPage> createState() => _OTPPageState();
 }
 
-class _OPTPageState extends State<OPTPage> {
+class _OTPPageState extends State<OTPPage> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -53,7 +53,8 @@ class _OPTPageState extends State<OPTPage> {
                   width: size.width * 0.9,
                   label: AppLocalizations.of(context)?.continueLabel ?? "",
                   onPress: () {
-                    Modular.to.pushNamed("/home");
+                    Modular.to.pushNamedAndRemoveUntil(
+                        "/main", ModalRoute.withName('/'));
                   }),
             ),
           ],
