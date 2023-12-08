@@ -1,8 +1,12 @@
 import 'package:calendar_timeline/calendar_timeline.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:your_track/app/your_track/extra/const/fonts.dart';
+import 'package:your_track/app/your_track/extra/const/icons.dart';
+import 'package:your_track/app/your_track/presenter/widgets/users/avatar.dart';
 
 import '../../../extra/const/colors.dart';
+import '../../widgets/buttons/texticon.dart';
 import '../../widgets/navigation/default.dart';
 import '../../widgets/tab_view/tab_view.dart';
 
@@ -18,10 +22,13 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ExtraColors.neutralWhite,
+      drawerEnableOpenDragGesture: false,
       appBar: NavigationDefault(
         title: "Today",
         backgroundColor: Colors.white,
-        onFilterClick: () {},
+        onFilterClick: (it) {
+          Scaffold.of(it).openDrawer();
+        },
       ),
       body: Column(
         children: [
@@ -56,6 +63,55 @@ class _MainPageState extends State<MainPage> {
         },
         child: const Icon(Icons.add),
         backgroundColor: ExtraColors.primary,
+      ),
+      drawer: _buildDrawer(),
+    );
+  }
+
+  Widget _buildDrawer() {
+    var links = [
+      "Today",
+      "Your stats",
+      "Challenge",
+      "Notifications",
+      "Messages",
+      "Settinsgs",
+      "Help"
+    ];
+    return Drawer(
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(
+              height: 72,
+            ),
+            const Avatar(),
+            Text("Thao Lee", style: ExtraFonts.headingSemiBold16),
+            const SizedBox(
+              height: 54,
+            ),
+            ...links.map((link) => Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 4),
+                  child: TextIconButton(
+                    iconPath: ExtraIcons.lougout,
+                    label: link,
+                    onPress: () {},
+                    bgColor: Colors.transparent,
+                    textcolor: ExtraColors.primary,
+                    iconColor: ExtraColors.primary,
+                  ),
+                )),
+            const Spacer(),
+            TextIconButton(
+              iconPath: ExtraIcons.lougout,
+              label: 'Log out',
+              onPress: () {},
+              bgColor: ExtraColors.semainticRed,
+            )
+          ],
+        ),
       ),
     );
   }

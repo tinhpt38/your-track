@@ -10,6 +10,9 @@ class TextIconButton extends StatelessWidget {
       {super.key,
       this.width = 153,
       this.height = 48,
+      this.bgColor = ExtraColors.primary,
+      this.textcolor = ExtraColors.neutralWhite,
+      this.iconColor = ExtraColors.neutralWhite,
       required this.iconPath,
       required this.onPress,
       required this.label});
@@ -18,6 +21,10 @@ class TextIconButton extends StatelessWidget {
   final double width;
   final double height;
   final String iconPath;
+  final Color bgColor;
+  final Color textcolor;
+  final Color iconColor;
+
   @override
   Widget build(BuildContext context) {
     return FilledButton(
@@ -25,6 +32,7 @@ class TextIconButton extends StatelessWidget {
           onPress();
         },
         style: ButtonStyle(
+          alignment: Alignment.centerLeft,
           minimumSize: MaterialStateProperty.all(Size(width, height)),
           elevation: MaterialStateProperty.all(0),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -32,24 +40,23 @@ class TextIconButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(20.0),
             ),
           ),
-          backgroundColor:
-              MaterialStateProperty.all<Color>(ExtraColors.primary),
+          backgroundColor: MaterialStateProperty.all<Color>(bgColor),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             IconButton(
               icon: SvgPicture.asset(
                 iconPath,
-                colorFilter:
-                    ColorFilter.mode(ExtraColors.primary, BlendMode.colorDodge),
+                color: iconColor,
+                // colorFilter: ColorFilter.mode(iconColor, BlendMode.colorDodge),
               ),
               onPressed: null,
             ),
             Text(
               label,
-              style: ExtraFonts.headingBold16
-                  .copyWith(color: ExtraColors.neutralWhite),
+              style: ExtraFonts.headingBold16.copyWith(color: textcolor),
             ),
           ],
         ));

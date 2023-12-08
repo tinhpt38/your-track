@@ -14,7 +14,7 @@ class NavigationDefault extends StatelessWidget implements PreferredSizeWidget {
       required this.onFilterClick,
       required this.title});
   final double height;
-  final Function onFilterClick;
+  final Function(BuildContext) onFilterClick;
   final String title;
   final Color backgroundColor;
   @override
@@ -27,11 +27,13 @@ class NavigationDefault extends StatelessWidget implements PreferredSizeWidget {
         title,
         style: ExtraFonts.titleBold20.copyWith(color: ExtraColors.neutralBlack),
       ),
-      leading: IconButton(
-        icon: SvgPicture.asset(ExtraIcons.filter),
-        onPressed: () {
-          onFilterClick();
-        },
+      leading: Builder(
+        builder: (context) => IconButton(
+          icon: SvgPicture.asset(ExtraIcons.filter),
+          onPressed: () {
+            onFilterClick(context);
+          },
+        ),
       ),
       actions: const [Avatar()],
     );
