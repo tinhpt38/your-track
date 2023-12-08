@@ -10,7 +10,7 @@ class PhoneInput extends StatelessWidget {
   Widget build(BuildContext context) {
     return InternationalPhoneNumberInput(
         onInputChanged: onChange,
-        maxLength: 10,
+        maxLength: 11,
         initialValue: PhoneNumber(isoCode: "VN"),
         hintText: label);
   }

@@ -9,6 +9,7 @@ import 'package:your_track/app/your_track/presenter/pages/signin/login.dart';
 import 'package:your_track/app/your_track/presenter/pages/onboarding/guild.dart';
 import 'package:your_track/app/your_track/presenter/pages/onboarding/onboarding.dart';
 import 'package:your_track/app/your_track/presenter/pages/home.dart';
+import 'package:your_track/app/your_track/presenter/pages/signin/opt.dart';
 
 class AppModule extends Module {
   @override
@@ -32,6 +33,7 @@ class AppModule extends Module {
     r.child('/', child: (context) => const OnboardingPage());
     r.child('/guild', child: (context) => const GuildPage());
     r.child('/login', child: (context) => const LoginPage());
+    r.child('/opt', child: (context) => const OPTPage());
     r.child('/home', child: (context) => const HomePage());
   }
 }

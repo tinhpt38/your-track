@@ -69,7 +69,7 @@ class _LoginPageState extends State<LoginPage> {
                       width: size.width * 0.9,
                       label: AppLocalizations.of(context)?.continueLabel ?? "",
                       onPress: () {
-                        Modular.to.pushNamed("/home");
+                        Modular.to.pushNamed("/opt");
                       }),
                 ),
               ],

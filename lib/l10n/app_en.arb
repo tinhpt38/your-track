@@ -21,6 +21,7 @@
     }
   },
   "yourPassword": "Your Password",
-  "yourPhone":"Your phone"
+  "yourPhone":"Your phone",
+  "verifyOtpCode": "Your OPT Code"
   
 }
